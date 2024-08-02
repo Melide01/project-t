@@ -28,12 +28,15 @@ body {
     top: 0;
     background: linear-gradient(to bottom, #000000cc, transparent);
     width: 100%; font-weight: 800;
-    margin: 0; padding-bottom: 5px; z-index: 99;
+    margin: 0; padding-bottom: 5px; z-index: -9;
     transition: opacity .2s;
     display: flex; justify-content: center;
 }
 #Title h1 {
-    width: 90%; max-width: 500px;
+    width: 90%; max-width: 500px; 
+}
+#Title h1 p {
+    font-size: 10px; margin: 0;
 }
 
 #bgholder {
@@ -90,7 +93,7 @@ body {
     }
 }
 
-h2 {
+#projectContainer h2 {
     background: linear-gradient(to top, #000000cc, transparent);
     cursor: default;
     width: calc(90% - 20px); max-width: 480px; font-weight: 800;
@@ -98,12 +101,12 @@ h2 {
     padding-left: 10px; padding-right: 10px;
     text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
 }
-h2:hover {
+#projectContainer h2:hover {
     text-shadow: -5px -5px 0 #000, 5px -5px 0 #000, -5px 5px 0 #000, 5px 5px 0 #000;
     animation: flicker 1s infinite;
 }
 
-p {
+#projectContainer p {
     background-color: #000000cc;
     width: calc(90% - 20px); max-width: 480px; margin: 0;
     padding-top: 10px; padding-bottom: 20px; color: #fff; font-size: 15px; font-style: italic;
