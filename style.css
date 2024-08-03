@@ -6,11 +6,12 @@ body {
 
 .closeBtn {
     font-size: 50px; background-color: red; border: solid 1px #fff; color: #fff;
-    padding: 5px; font-weight: 600;
-    width: 30px; height: 30px; line-height: 30px; 
+    /* padding: 5px;*/ font-weight: 600;
+    width: 40px; height: 40px; line-height: 35px; 
     text-align: center; 
     position: absolute; top: 50px; right: 50px; 
     cursor: pointer;
+    border-radius: 10px;
     transition: all .1s;
 }
 .closeBtn:hover {
@@ -19,18 +20,29 @@ body {
 .closeBtn:active {
     color: #000; border: solid 1px #000; background-color: #0a0;
 }
+.closeBtn::after {
+    border-radius: 10px;
+    content: ""; width: 35px; height: 20px; z-index: 999; position: absolute; top: 2px; right: 2.5px;
+    background: linear-gradient(to bottom, #ffffffaa, transparent);
+    transition: all .2s;
+}
+.closeBtn:hover::after {
+    width: 40px; height: 20px; top: 3px; right: 0;
+}
 
 
 #Title {
     cursor: default;
-    color: #fff;
+    color: #000;
     position: fixed;
     top: 0;
+    padding-top: 50%;
     background: linear-gradient(to bottom, #000000cc, transparent);
     width: 100%; font-weight: 800;
     margin: 0; padding-bottom: 5px; z-index: -9;
     transition: opacity .2s;
     display: flex; justify-content: center;
+    transition: all 1s;
 }
 #Title h1 {
     width: 90%; max-width: 500px; 
@@ -40,9 +52,11 @@ body {
 }
 
 #bgholder {
+    opacity: 0;
     position: fixed; z-index: -99;
     top: 0; left: 0;
     width: 100%; height: 100%;
+    transition: opacity 1s;
 }
 #bgholder img {
     position: absolute; left: 0; top: 0;
@@ -51,10 +65,12 @@ body {
 }
 
 #projectContainer {
+    opacity: 0;
     width: 100%;
     /* position: absolute; */ margin-top: 70px;
     display: flex; align-items: center; height: 100vh;
     flex-direction: column;
+    transition: opacity 1s;
 }
 
 @keyframes flicker {
@@ -126,10 +142,28 @@ h2 i {
     margin-bottom: 50px;
 }
 
+@keyframes highlight {
+    0% {
+        top: -100%;
+    }
+    50% {
+        top: 0;
+    }
+    100% {
+        top: -100%
+    }
+}
+
 .mood-board-item {
     position: relative; overflow: hidden;
     width: 100%; padding-top: 100%;
-    
+}
+.mood-board-item::after {
+    content: ""; position: absolute; width: 100%; height: 100%; background: linear-gradient(to bottom, #fff, transparent);
+    top: -100%; left: 0; pointer-events: none; opacity: .5;
+}
+.mood-board-item:hover::after {
+    animation: highlight 2s infinite;
 }
 
 .mood-board-item img {

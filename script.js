@@ -57,12 +57,22 @@ var projectData = [
     }
 ];
 
+const bgholder = document.getElementById('bgholder');
 const modalElement = document.getElementById('modalElement');
 const projectContainer = document.getElementById('projectContainer');
 const Title = document.getElementById('Title');
 
 document.addEventListener('DOMContentLoaded',() =>  {
     projectContainer.innerHTML = loadProj(projectData);
+
+    setTimeout(() => {
+        Title.style.color = "#fff"; Title.style.paddingTop = "0";
+        bgholder.style.opacity = "1"
+
+        setTimeout(() => {
+            projectContainer.style.opacity = "1";
+        }, 500);
+    }, 1000);
 
     setTimeout(() => {
         addEventModal();
