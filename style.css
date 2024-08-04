@@ -84,7 +84,7 @@ body {
     transition: opacity .2s;
 }
 
-#projectContainer {
+#moodBContainer {
     opacity: 0;
     width: 100%;
     /* position: absolute; */ margin-top: 70px;
@@ -129,7 +129,7 @@ body {
     }
 }
 
-#projectContainer h2 {
+#moodBContainer h2 {
     background: linear-gradient(to top, #000000cc, transparent);
     cursor: default;
     width: calc(90% - 20px); max-width: 480px; font-weight: 800;
@@ -137,12 +137,12 @@ body {
     padding-left: 10px; padding-right: 10px;
     text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
 }
-#projectContainer h2:hover {
+#moodBContainer h2:hover {
     text-shadow: -5px -5px 0 #000, 5px -5px 0 #000, -5px 5px 0 #000, 5px 5px 0 #000;
     animation: flicker 1s infinite;
 }
 
-#projectContainer p {
+#moodBContainer p {
     background-color: #000000cc;
     width: calc(90% - 20px); max-width: 480px; margin: 0;
     padding-top: 10px; padding-bottom: 20px; color: #fff; font-size: 15px; font-style: italic;

@@ -59,12 +59,12 @@ var projectData = [
 
 const bgholder = document.getElementById('bgholder');
 const modalElement = document.getElementById('modalElement');
-const projectContainer = document.getElementById('projectContainer');
+const moodBContainer = document.getElementById('moodBContainer');
 const Title = document.getElementById('Title');
 const menu = document.getElementById('menu');
 
 document.addEventListener('DOMContentLoaded',() =>  {
-    projectContainer.innerHTML = loadProj(projectData);
+    moodBContainer.innerHTML = loadProj(projectData);
 
     setTimeout(() => {
         // add something here
@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded',() =>  {
 
 
 function loadMoodboards() {
-    projectContainer.style.display = "flex";
+    moodBContainer.style.display = "flex";
     menu.style.opacity = "0";
 
     Title.style.color = "#fff"; Title.style.paddingTop = "0";
@@ -85,7 +85,7 @@ function loadMoodboards() {
 
     setTimeout(() => {
         menu.style.display = "none";
-        projectContainer.style.opacity = "1";
+        moodBContainer.style.opacity = "1";
     }, 500);
 }
 
@@ -121,7 +121,6 @@ function loadProj(project) {
 
         });
     })
-
     return output;
 };
 
@@ -133,7 +132,7 @@ function showModal(img, type) {
 
 
 function addEventModal() {
-    const imageList = document.querySelectorAll('#projectContainer img');
+    const imageList = document.querySelectorAll('#moodBContainer img');
 
     imageList.forEach(image => {
         image.addEventListener('click',() => {
