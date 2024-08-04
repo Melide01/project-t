@@ -61,23 +61,33 @@ const bgholder = document.getElementById('bgholder');
 const modalElement = document.getElementById('modalElement');
 const projectContainer = document.getElementById('projectContainer');
 const Title = document.getElementById('Title');
+const menu = document.getElementById('menu');
 
 document.addEventListener('DOMContentLoaded',() =>  {
     projectContainer.innerHTML = loadProj(projectData);
 
     setTimeout(() => {
-        Title.style.color = "#fff"; Title.style.paddingTop = "0";
-        bgholder.style.opacity = "1"
-
-        setTimeout(() => {
-            projectContainer.style.opacity = "1";
-        }, 500);
+        // add something here
     }, 1000);
 
     setTimeout(() => {
         addEventModal();
     }, 100);
 });
+
+
+function loadMoodboards() {
+    projectContainer.style.display = "flex";
+    menu.style.opacity = "0";
+
+    Title.style.color = "#fff"; Title.style.paddingTop = "0";
+    bgholder.style.opacity = "1"
+
+    setTimeout(() => {
+        menu.style.display = "none";
+        projectContainer.style.opacity = "1";
+    }, 500);
+}
 
 var selectedImg = "";
 
